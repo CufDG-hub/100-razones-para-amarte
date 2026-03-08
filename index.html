@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>100 Razones por las que te amo</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+}
+
+.container{
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    text-align:center;
+    max-width:500px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+h1{
+    color:#ff4d6d;
+}
+
+#reason{
+    font-size:20px;
+    margin:30px 0;
+    min-height:60px;
+}
+
+button{
+    background:#ff4d6d;
+    border:none;
+    color:white;
+    padding:15px 25px;
+    font-size:16px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#ff1e4d;
+}
+
+.counter{
+    margin-top:15px;
+    color:gray;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>100 razones por las que te amo 💗</h1>
+
+<div id="reason">
+Presiona el botón para ver la primera razón
+</div>
+
+<button onclick="nextReason()">Mostrar razón</button>
+
+<div class="counter" id="counter"></div>
+
+</div>
+
+<script>
+
+let reasons = [
+"Te amo porque siempre estás en mis pensamientos.",
+"Te amo porque haces que mis días sean mejores.",
+"Te amo porque tu sonrisa ilumina todo.",
+"Te amo porque me haces sentir paz.",
+"Te amo porque contigo puedo ser yo mismo.",
+"Te amo porque me escuchas cuando más lo necesito.",
+"Te amo porque confías en mí.",
+"Te amo porque siempre encuentras la forma de hacerme reír.",
+"Te amo porque tu forma de ver la vida me inspira.",
+"Te amo porque me apoyas en mis sueños.",
+"Te amo porque tu presencia me da calma.",
+"Te amo porque contigo todo tiene más sentido.",
+"Te amo porque haces que lo simple sea especial.",
+"Te amo porque tu voz me tranquiliza.",
+"Te amo porque me haces sentir importante.",
+"Te amo porque me motivas a ser mejor.",
+"Te amo porque eres sincera conmigo.",
+"Te amo porque tu forma de pensar me encanta.",
+"Te amo porque tu cariño es verdadero.",
+"Te amo porque me haces sentir querido.",
+"Te amo porque tus palabras me llenan el corazón.",
+"Te amo porque me entiendes incluso cuando no hablo.",
+"Te amo porque me haces sentir seguro.",
+"Te amo porque contigo el tiempo pasa volando.",
+"Te amo porque siempre estás cuando te necesito.",
+"Te amo porque tu forma de amar es única.",
+"Te amo porque tu alegría es contagiosa.",
+"Te amo porque tus abrazos se sienten como hogar.",
+"Te amo porque haces que todo sea más bonito.",
+"Te amo porque me haces creer más en el amor.",
+"Te amo porque tu bondad es enorme.",
+"Te amo porque tu corazón es hermoso.",
+"Te amo porque eres especial.",
+"Te amo porque contigo puedo hablar de todo.",
+"Te amo porque tu forma de ser me encanta.",
+"Te amo porque siempre intentas comprenderme.",
+"Te amo porque me haces sentir acompañado.",
+"Te amo porque tu cariño me fortalece.",
+"Te amo porque tu ternura es única.",
+"Te amo porque haces que mi vida tenga más color.",
+"Te amo porque tu risa es hermosa.",
+"Te amo porque me haces sentir feliz.",
+"Te amo porque siempre encuentras palabras para animarme.",
+"Te amo porque contigo todo se siente más fácil.",
+"Te amo porque eres dulce conmigo.",
+"Te amo porque tu forma de cuidar a los demás es hermosa.",
+"Te amo porque eres paciente conmigo.",
+"Te amo porque tu forma de amar es sincera.",
+"Te amo porque contigo todo se siente real.",
+"Te amo porque haces que mi corazón lata más fuerte.",
+"Te amo porque me haces sentir en casa.",
+"Te amo porque tu compañía vale oro.",
+"Te amo porque eres alguien en quien puedo confiar.",
+"Te amo porque siempre intentas hacerme feliz.",
+"Te amo porque me haces sentir especial.",
+"Te amo porque tu cariño es puro.",
+"Te amo porque contigo puedo ser vulnerable.",
+"Te amo porque tu energía me alegra.",
+"Te amo porque eres única.",
+"Te amo porque haces que cada momento valga la pena.",
+"Te amo porque tu mirada transmite mucho.",
+"Te amo porque tu forma de hablar me encanta.",
+"Te amo porque siempre tienes algo bueno que decir.",
+"Te amo porque tu forma de pensar es hermosa.",
+"Te amo porque contigo aprendí cosas nuevas del amor.",
+"Te amo porque haces que mi mundo sea mejor.",
+"Te amo porque tu presencia me calma.",
+"Te amo porque me haces sonreír sin razón.",
+"Te amo porque me inspiras.",
+"Te amo porque siempre buscas lo mejor.",
+"Te amo porque tu cariño es sincero.",
+"Te amo porque tu forma de ver el mundo es especial.",
+"Te amo porque haces que todo tenga más sentido.",
+"Te amo porque eres increíble.",
+"Te amo porque me haces sentir vivo.",
+"Te amo porque me aceptas como soy.",
+"Te amo porque me haces querer ser mejor.",
+"Te amo porque tu ternura es infinita.",
+"Te amo porque tu amor me da fuerza.",
+"Te amo porque haces que mi corazón esté en paz.",
+"Te amo porque tu sonrisa me alegra el día.",
+"Te amo porque eres una persona maravillosa.",
+"Te amo porque haces que todo sea más bonito.",
+"Te amo porque tu forma de amar es especial.",
+"Te amo porque me haces sentir importante en tu vida.",
+"Te amo porque siempre tratas de entenderme.",
+"Te amo porque tu cariño es verdadero.",
+"Te amo porque contigo puedo ser feliz.",
+"Te amo porque tu corazón es noble.",
+"Te amo porque haces que cada día valga más.",
+"Te amo porque tu forma de ser me enamora.",
+"Te amo porque me haces sentir amado.",
+"Te amo porque tu presencia cambia mi día.",
+"Te amo porque contigo todo se siente mejor.",
+"Te amo porque tu dulzura es única.",
+"Te amo porque eres alguien muy especial para mí.",
+"Te amo por tu hermoso físico, porque tu belleza me deja sin palabras.",
+"Te amo porque tu esencia es maravillosa.",
+"Te amo porque mi corazón te eligió.",
+"Te amo porque simplemente eres tú."
+];
+
+let index = 0;
+
+function nextReason(){
+
+    if(index < reasons.length){
+        document.getElementById("reason").innerText = reasons[index];
+        document.getElementById("counter").innerText = (index+1) + " / 100";
+        index++;
+    }else{
+        document.getElementById("reason").innerText = "Estas son solo algunas de las muchas razones por las que te amo ❤️";
+    }
+
+}
+
+</script>
+
+</body>
+</html>
